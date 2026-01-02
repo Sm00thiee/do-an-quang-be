@@ -172,7 +172,7 @@ Authorization: Bearer <access_token>
     "fullName": "Tên đầy đủ",
     "role": "candidate",
     "emailConfirmed": true,
-    "createdAt": "2023-01-01T00:00:00Z"
+    "createdAt": "2026-01-01T00:00:00Z"
   }
 }
 ```
@@ -201,7 +201,7 @@ Kiểm tra trạng thái server
 ```json
 {
   "status": "OK",
-  "timestamp": "2023-01-01T00:00:00Z",
+  "timestamp": "2026-01-01T00:00:00Z",
   "environment": "development"
 }
 ```
