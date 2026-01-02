@@ -298,14 +298,19 @@ const login = async (req, res) => {
       console.warn('Không thể lấy profile:', profileErr);
     }
 
+
     res.json({
       message: 'Đăng nhập thành công',
       user: {
         id: data.user.id,
         email: data.user.email,
+        firstName: userProfile?.first_name || data.user.user_metadata?.first_name,
+        lastName: userProfile?.last_name || data.user.user_metadata?.last_name,
         fullName: userProfile?.full_name || data.user.user_metadata?.full_name,
+        companyName: data.user.user_metadata?.companyName || userProfile?.company_name,
         role: userProfile?.role || data.user.user_metadata?.role || 'candidate',
-        emailConfirmed: data.user.email_confirmed_at ? true : false
+        emailConfirmed: data.user.email_confirmed_at ? true : false,
+        avatar_url: userProfile?.avatar_url
       },
       session: {
         access_token: data.session.access_token,

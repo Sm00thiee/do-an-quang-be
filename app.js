@@ -41,6 +41,9 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/data', require('./routes/data'));
 app.use('/api/roadmaps', require('./routes/roadmaps'));
 app.use('/api/jobs', require('./routes/jobs'));
+app.use('/api/applications', require('./routes/applications'));
+app.use('/api/saved-jobs', require('./routes/savedJobs'));
+app.use('/api/ai', require('./routes/ai'));
 
 // Route không tìm thấy - sử dụng middleware thay vì app.all('*')
 app.use((req, res) => {
