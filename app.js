@@ -40,6 +40,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/data', require('./routes/data'));
 app.use('/api/roadmaps', require('./routes/roadmaps'));
+app.use('/api/jobs', require('./routes/jobs'));
 
 // Route không tìm thấy - sử dụng middleware thay vì app.all('*')
 app.use((req, res) => {
