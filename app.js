@@ -44,6 +44,7 @@ app.use('/api/jobs', require('./routes/jobs'));
 app.use('/api/applications', require('./routes/applications'));
 app.use('/api/saved-jobs', require('./routes/savedJobs'));
 app.use('/api/ai', require('./routes/ai'));
+app.use('/api/ai-chat', require('./routes/aiChat')); // AI Chatbot with Supabase
 
 // Route không tìm thấy - sử dụng middleware thay vì app.all('*')
 app.use((req, res) => {
