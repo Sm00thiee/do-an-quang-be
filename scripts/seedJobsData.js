@@ -98,10 +98,10 @@ async function seedJobsAutomatic() {
         // Data to insert
         const jobs = [
             {
-                title: 'Senior ReactJS Developer (Lương tới $2000)',
-                description: 'Tham gia phát triển các sản phẩm web application lớn cho khách hàng Nhật Bản.',
-                requirements: '- Có ít nhất 3 năm kinh nghiệm với ReactJS\n- Có kiến thức về State Management',
-                benefits: '- Lương thưởng hấp dẫn\n- Review lương 2 lần/năm',
+                title: 'Lập trình viên ReactJS Senior (Lương tới 50 triệu)',
+                description: 'Tham gia phát triển các sản phẩm web application lớn cho khách hàng Nhật Bản, sử dụng ReactJS, NextJS, TailwindCSS. Làm việc trực tiếp với team kỹ thuật và PO người Việt.',
+                requirements: '- Ít nhất 3 năm kinh nghiệm phát triển Frontend với ReactJS\n- Có kiến thức về State Management (Redux, Zustand hoặc tương đương)\n- Biết làm việc với RESTful API / GraphQL\n- Tiếng Anh đọc hiểu tài liệu kỹ thuật cơ bản',
+                benefits: '- Lương thưởng cạnh tranh, thưởng hiệu suất theo quý\n- Review lương 2 lần/năm\n- Đóng BHXH, BHYT, BHTN trên 100% lương\n- Phụ cấp ăn trưa, gửi xe, làm thêm giờ',
                 salary_from: 30000000,
                 salary_to: 50000000,
                 quantity: 2,
@@ -116,10 +116,10 @@ async function seedJobsAutomatic() {
                 _job_type_id: fulltimeId
             },
             {
-                title: 'Frontend Intern (Có lương)',
-                description: 'Được đào tạo bài bản về quy trình làm việc Scrum/Agile.',
-                requirements: '- Sinh viên năm cuối\n- Biết HTML/CSS/JS cơ bản',
-                benefits: '- Trợ cấp thực tập: 3-5 triệu',
+                title: 'Thực tập sinh Frontend (Có hỗ trợ lương)',
+                description: 'Được đào tạo bài bản về quy trình làm việc Scrum/Agile, code review và best practices. Tham gia dự án thực tế cùng mentor là Senior Developer.',
+                requirements: '- Sinh viên năm cuối hoặc mới tốt nghiệp chuyên ngành CNTT hoặc liên quan\n- Có tư duy lập trình tốt, nắm vững HTML/CSS/JavaScript cơ bản\n- Biết một trong các framework: ReactJS / VueJS là lợi thế\n- Sẵn sàng commit tối thiểu 4 buổi/tuần',
+                benefits: '- Trợ cấp thực tập 3–5 triệu/tháng tùy năng lực\n- Cơ hội trở thành nhân viên chính thức sau kỳ thực tập\n- Được training 1-1 với mentor, hỗ trợ đồ án tốt nghiệp nếu cần',
                 salary_from: 3000000,
                 salary_to: 5000000,
                 quantity: 5,
@@ -134,10 +134,10 @@ async function seedJobsAutomatic() {
                 _job_type_id: fulltimeId
             },
             {
-                title: 'Digital Marketing Manager',
-                description: 'Xây dựng chiến lược marketing tổng thể.',
-                requirements: '- 2 năm kinh nghiệm\n- Leader team',
-                benefits: '- Môi trường năng động',
+                title: 'Trưởng nhóm Digital Marketing',
+                description: 'Xây dựng và triển khai chiến lược Digital Marketing tổng thể cho các nhãn hàng F&B (Facebook, TikTok, Instagram, Zalo...).',
+                requirements: '- Tối thiểu 2 năm kinh nghiệm ở vị trí Senior/Leader Digital Marketing\n- Đã từng quản lý team từ 3–5 thành viên\n- Có kinh nghiệm chạy quảng cáo Facebook Ads/Google Ads là lợi thế\n- Tư duy phân tích số liệu tốt, chịu được áp lực deadline',
+                benefits: '- Môi trường làm việc 9x năng động, sáng tạo\n- Lương thưởng theo hiệu quả chiến dịch, thưởng dự án rõ ràng\n- Teambuilding 3 tháng/lần, du lịch hằng năm',
                 salary_from: 20000000,
                 salary_to: 30000000,
                 quantity: 1,
@@ -150,6 +150,24 @@ async function seedJobsAutomatic() {
                 views: 200,
                 _business_field_id: marketingField,
                 _job_type_id: remoteId
+            },
+            {
+                title: 'Chuyên viên Tuyển dụng IT',
+                description: 'Phụ trách toàn bộ quy trình tuyển dụng cho các vị trí IT (Frontend, Backend, QA, DevOps...) từ khâu đăng tin, sàng lọc CV, phỏng vấn đến offer.',
+                requirements: '- Tối thiểu 1 năm kinh nghiệm tuyển dụng, ưu tiên đã từng tuyển dụng mảng IT\n- Giao tiếp tốt, chủ động, kiên nhẫn\n- Biết sử dụng các kênh tuyển dụng phổ biến (Facebook group, LinkedIn, TopCV, VietnamWorks...)',
+                benefits: '- Lương cứng + thưởng theo mỗi ứng viên onboard thành công\n- Được training thêm về kiến thức cơ bản các vị trí IT\n- Thời gian làm việc linh hoạt, có thể hybrid 2–3 ngày/tuần',
+                salary_from: 12000000,
+                salary_to: 18000000,
+                quantity: 2,
+                role: 'Nhân viên',
+                experience_required: '1 năm',
+                deadline: new Date(Date.now() + 25 * 24 * 60 * 60 * 1000).toISOString(),
+                status: 'active',
+                company_id: agencyComp.id,
+                province_id: hanoi || hcm,
+                views: 90,
+                _business_field_id: marketingField,
+                _job_type_id: fulltimeId
             }
         ];
 
