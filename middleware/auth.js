@@ -1,7 +1,7 @@
-const jwt = require('jsonwebtoken');
-const { supabase } = require('../config/supabase');
+const { supabaseAdmin } = require('../config/supabase');
 
-// Middleware xác thực JWT token
+// Middleware xác thực JWT token từ Supabase Auth
+// Token này được frontend gửi lên từ Supabase client
 const authenticateToken = async (req, res, next) => {
   try {
     const authHeader = req.headers['authorization'];
@@ -13,17 +13,20 @@ const authenticateToken = async (req, res, next) => {
       });
     }
 
-    // Xác thực token với Supabase
-    const { data: { user }, error } = await supabase.auth.getUser(token);
+    // Xác thực token với Supabase Admin client
+    // Điều này verify JWT signature và trích xuất thông tin user
+    const { data: { user }, error } = await supabaseAdmin.auth.getUser(token);
     
     if (error || !user) {
+      console.error('Token validation error:', error);
       return res.status(403).json({ 
         error: 'Token không hợp lệ hoặc đã hết hạn' 
       });
     }
 
-    // Gắn thông tin user vào request
+    // Gắn thông tin user vào request để các route handlers sử dụng
     req.user = user;
+    req.userId = user.id;
     next();
   } catch (error) {
     console.error('Lỗi xác thực token:', error);
@@ -42,8 +45,8 @@ const requireAdmin = async (req, res, next) => {
       });
     }
 
-    // Kiểm tra role trong metadata hoặc database
-    const { data: profile, error } = await supabase
+    // Kiểm tra role trong database
+    const { data: profile, error } = await supabaseAdmin
       .from('user_profiles')
       .select('role')
       .eq('id', req.user.id)

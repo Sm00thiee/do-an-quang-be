@@ -12,8 +12,15 @@ if (!supabaseUrl || !supabaseAnonKey) {
   );
 }
 
-// Tạo Supabase client
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Tạo Supabase client (backend-only, không dùng cho authentication)
+// Frontend sẽ tự tạo Supabase client riêng để xử lý auth
+const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    autoRefreshToken: false,
+    persistSession: false,
+    detectSessionInUrl: false
+  }
+});
 
 // Tạo Supabase client cho admin (với service role key)
 const createAdminClient = () => {

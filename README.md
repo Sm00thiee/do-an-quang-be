@@ -2,6 +2,24 @@
 
 Backend API cho ứng dụng tuyển dụng sử dụng Express.js và Supabase.
 
+## 🎯 Authentication with Supabase
+
+**Important:** This backend uses **Supabase Auth** for authentication. The frontend can authenticate directly with Supabase without starting this backend.
+
+### 📚 Complete Documentation
+- 📑 **Documentation Index**: [DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md) - Start here!
+- 📖 **Quick Start**: [AUTH_QUICKSTART.md](./AUTH_QUICKSTART.md) - 5 minute setup
+- 📘 **Full Integration Guide**: [FRONTEND_AUTH_INTEGRATION.md](./FRONTEND_AUTH_INTEGRATION.md)
+- 🔧 **Environment Variables**: [ENV_VARIABLES_FRONTEND.md](./ENV_VARIABLES_FRONTEND.md)
+- 👥 **Team Setup**: [TEAM_SETUP_GUIDE.md](./TEAM_SETUP_GUIDE.md)
+- 🏗️ **Architecture**: [ARCHITECTURE.md](./ARCHITECTURE.md)
+- ✅ **Migration Summary**: [MIGRATION_SUMMARY.md](./MIGRATION_SUMMARY.md)
+
+### Backend Purpose
+- Validate JWT tokens from Supabase
+- Manage user profiles and additional data
+- Handle business logic and protected endpoints
+
 ## Cài đặt
 
 ### 1. Cài đặt dependencies
