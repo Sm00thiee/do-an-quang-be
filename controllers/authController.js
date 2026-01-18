@@ -335,11 +335,12 @@ const logout = async (req, res) => {
     const token = authHeader && authHeader.split(' ')[1];
 
     if (token) {
-      // Đăng xuất với Supabase
-      const { error } = await supabase.auth.signOut();
+      // Đăng xuất với Supabase Admin - sign out the specific user session
+      const { error } = await supabaseAdmin.auth.admin.signOut(token);
 
       if (error) {
         console.warn('Lỗi khi đăng xuất:', error);
+        // Continue anyway to respond success to client
       }
     }
 
